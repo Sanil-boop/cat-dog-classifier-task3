@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cat vs Dog Classifier</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🐾 Cat & Dog Classifier (SVM)</h1>
+    <p class="subtitle">Upload an image of a Cat or Dog to classify</p>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data" class="upload-box">
+
+        <input type="file" name="image" accept="image/*" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- show filename -->
+    {% if filename %}
+    <p class="file-name">Uploaded: {{ filename }}</p>
+    {% endif %}
+
+    <!-- show prediction -->
+    {% if prediction %}
+    <div class="result success">
+        <h2>{{ prediction }}</h2>
+    </div>
+    {% endif %}
+
+    <!-- show error message -->
+    {% if error %}
+    <div class="result error">
+        <h2>{{ error }}</h2>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
