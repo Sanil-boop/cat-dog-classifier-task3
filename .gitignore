@@ -1,0 +1,17 @@
+# Do not upload dataset folders
+train/
+test/
+Dataset/
+data/
+images/
+
+# Ignore image files
+*.jpg
+*.jpeg
+*.png
+
+# Jupyter cache
+.ipynb_checkpoints/
+
+# Windows system junk
+Thumbs.db
